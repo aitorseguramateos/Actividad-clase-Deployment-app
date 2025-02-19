@@ -4,3 +4,8 @@ Para descargar el repositorio hay que introducir el siguiente comando en el term
 ```
 git clone https://github.com/aitorseguramateos/Actividad-clase-Deployment-app.git
 ```
+
+Creamos la imagen:
+```
+docker build -t mi-web .
+```
