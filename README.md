@@ -9,3 +9,8 @@ Creamos la imagen:
 ```
 docker build -t mi-web .
 ```
+
+Arrancamos el contenedor:
+```
+docker run -d -p 8080:80 mi-web-dockerizada
+```
