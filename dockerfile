@@ -4,7 +4,7 @@ FROM nginx
 COPY php-attendance/index.php /usr/share/nginx/html
 
 # Puerto en el que Nginx escuchará
-EXPOSE XX
+EXPOSE 80
 
 # Comando para iniciar Nginx en primer plano
 CMD ["nginx", "-g", "daemon off;"]
