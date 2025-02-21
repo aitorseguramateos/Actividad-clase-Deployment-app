@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: aitor
+      MYSQL_DATABASE: aitor
+      MYSQL_USER: aitor
+      MYSQL_PASSWORD: aitor
+    volumes:
+      - mysql_data:/var/lib/mysql  # Volumen persistente para los datos de la DB
+      - ./initdb:/docker-entrypoint-initdb.d  # Montamos el script de inicialización
+    networks:
+      - webnet
+
+  web:
+     #Imagen que acabamos de subir
+     image: cibaism/practica-ifp:v2
+     restart: always
+     #Redireccion de puertos
+     ports:
+     - "8080:80"
+
+volumes:
+  mysql_data:
+
+networks:
+  webnet:
