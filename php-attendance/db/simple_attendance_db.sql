@@ -6,6 +6,13 @@
 -- Generation Time: Nov 30, 2023 at 04:38 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
+CREATE DATABASE IF NOT EXISTS aitor;
+
+CREATE USER IF NOT EXISTS 'aitor'@'%' IDENTIFIED BY 'aitor';
+GRANT ALL PRIVILEGES ON aitor.* TO 'aitor'@'%';
+FLUSH PRIVILEGES;
+
+USE aitor;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
