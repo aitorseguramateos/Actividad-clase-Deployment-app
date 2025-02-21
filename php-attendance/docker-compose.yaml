@@ -17,7 +17,7 @@ services:
 
   web:
      #Imagen que acabamos de subir
-     image: cibaism/practica-ifp:v2
+     image: cibaism/practica-ifp:v1
      restart: always
      #Redireccion de puertos
      ports:
