@@ -2,7 +2,7 @@ FROM nginx
 
 # Copiamos el archivo principal de HTML al directorio de contenido estático de Nginx
 COPY * /usr/share/nginx/html
-
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Puerto en el que Nginx escuchará
 EXPOSE 80
 
