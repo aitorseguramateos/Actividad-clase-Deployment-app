@@ -4,7 +4,7 @@ $host = "localhost";
 // Username
 $uname = "root";
 // Password
-$pw = "";
+$pw = "aitor";
 // Database Name
 $dbname = "simple_attendance_db";
 
