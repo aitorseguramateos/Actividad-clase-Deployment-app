@@ -11,7 +11,7 @@ services:
       MYSQL_PASSWORD: aitor
     volumes:
       - mysql_data:/var/lib/mysql  # Volumen persistente para los datos de la DB
-      - ./initdb:/docker-entrypoint-initdb.d  # Montamos el script de inicialización
+      - ./db:/docker-entrypoint-initdb.d  # Montamos el script de inicialización
     networks:
       - webnet
 
