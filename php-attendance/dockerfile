@@ -1,11 +1,14 @@
-FROM nginx
+# Dockerfile
+FROM nginx:latest
 
-# Copiamos el archivo principal de HTML al directorio de contenido estático de Nginx
+# Copiar la configuración de Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Copiar los archivos de la página web (incluidos los archivos PHP) al contenedor
 COPY . /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Puerto en el que Nginx escuchará
+# Exponer el puerto 80 para Nginx
 EXPOSE 80
 
-# Comando para iniciar Nginx en primer plano
+# Iniciar Nginx en primer plano
 CMD ["nginx", "-g", "daemon off;"]
