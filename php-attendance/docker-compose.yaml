@@ -15,16 +15,31 @@ services:
     networks:
       - webnet
 
+  php:
+    image: php:8.1-fpm
+    container_name: php-fpm
+    volumes:
+      - .:/usr/share/nginx/html  # Compartir los archivos de la web con PHP-FPM
+    networks:
+      - webnet
+
   web:
-     #Imagen que acabamos de subir
-     image: cibaism/practica-ifp:v1
-     restart: always
-     #Redireccion de puertos
-     ports:
-     - "8080:80"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nginx-web
+    ports:
+      - "80:80"  # Redirigir puerto 80 del contenedor al 8080 de la máquina local
+    volumes:
+      - .:/usr/share/nginx/html  # Compartir los archivos de la web con Nginx
+    networks:
+      - webnet
+    depends_on:
+      - php  # Asegura que PHP-FPM se inicie antes que Nginx
 
 volumes:
   mysql_data:
 
 networks:
   webnet:
+    driver: bridge
