@@ -25,3 +25,8 @@ cd M08-WEB-APP
 ```
 docker-compose up --build
 ```
+
+Una vez desplegado, vamos a abrir el navegador para ver la web.
+```
+http://<ip de la máquina que se ha compilado>:8080
+```
